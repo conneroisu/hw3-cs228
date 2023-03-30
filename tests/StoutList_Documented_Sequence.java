@@ -3,8 +3,9 @@ import org.junit.Before;
 import org.junit.Test;
 import edu.iastate.cs228.hw3.StoutList;
 
-public class TestDocumentSequence {
-    StoutList list;
+public class StoutList_Documented_Sequence {
+    // Stout List for Class
+    private StoutList<String> list;
     @Before
     public void documentSetup() {
         list = new StoutList<String>();

@@ -1,10 +1,9 @@
-import org.junit.Assert;
 import org.junit.Test;
 import edu.iastate.cs228.hw3.StoutList;
 
 import static org.junit.Assert.assertEquals;
 
-public class TestInsertionSort {
+public class StoutList_Insertion_Sort {
     
     @Test
     public void trivialTest() { assertEquals(1, 1); }

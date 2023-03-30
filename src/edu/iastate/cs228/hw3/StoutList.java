@@ -1,4 +1,3 @@
-
 package edu.iastate.cs228.hw3;
 
 import java.util.*;
@@ -47,13 +46,11 @@ public class StoutList<E extends Comparable<? super E>> extends AbstractSequenti
         }
         int offset = 0;
         // create a data array for checking the node
-        E[] data = (E[]) new Comparable[nodeSize];
         Node node = null;
         if (isEmpty()) {
             node = new Node();
             node.addItem(0, item);
             link(head, node);
-            data = node.data;
         } else {
             NodeInfo nodeInfo = findByIndex(size);
             if (nodeInfo.exists == false) {
@@ -61,7 +58,6 @@ public class StoutList<E extends Comparable<? super E>> extends AbstractSequenti
                 link(tail.previous, node);
                 nodeInfo.node = node;
             }
-            data = nodeInfo.node.data;
             offset = nodeInfo.offset;
             node = nodeInfo.node;
             node.addItem(offset, item);
@@ -328,24 +324,26 @@ public class StoutList<E extends Comparable<? super E>> extends AbstractSequenti
         Node node = head.next;
         int previousSum = 0;
         int currentSum;
-
         while (node != null) {
             currentSum = previousSum + node.count;
             if (index > previousSum && index <= currentSum) {
-                if (index % nodeSize == 0) {
-                    return new NodeInfo(node, 0, false);
-                }
-                if (previousSum == 0) {
-                    return new NodeInfo(node, index);
-                }
-                for (int i = previousSum + 1; i < index; i++) {
-                    return new NodeInfo(node, i - previousSum - 1);
+                int positionInNode = index - previousSum;
+                try {
+                    E temp = node.data[positionInNode];
+                    return new NodeInfo(node, positionInNode);
+                } catch (IndexOutOfBoundsException e) {
+                    Node resultNode = new Node();
+                    link(tail.previous, resultNode);
+                    return new NodeInfo(resultNode, 0);
                 }
             }
+
             node = node.next;
             previousSum = currentSum;
         }
-        return new NodeInfo(null, -1);
+        Node resultNode = new Node();
+        link(tail.previous, resultNode);
+        return new NodeInfo(resultNode, 0);
     }
 
     private class NodeInfo {
@@ -468,9 +466,7 @@ public class StoutList<E extends Comparable<? super E>> extends AbstractSequenti
             if (offset <= last) {
                 addItem(offset, item);
             }
-//            else if (offset > last) {
             newNode.addItem(offset - last, item);
-//            }
         }
 
         private boolean isFull() {
@@ -500,7 +496,12 @@ public class StoutList<E extends Comparable<? super E>> extends AbstractSequenti
     }
 
     private class StoutListIterator implements ListIterator<E> {
-
+     private Node current;
+        private Node removeCurrent;
+        private int removeOffS;
+        private int pIndex;
+        private int offS;
+        private int poffS;
         // constants you possibly use ... instance variables ... TODO remove this
         private static final int BEHIND = -1;
         private static final int AHEAD = 1;
@@ -518,7 +519,7 @@ public class StoutList<E extends Comparable<? super E>> extends AbstractSequenti
 
         public StoutListIterator(int positionalValue) {
             if (positionalValue < 0 || positionalValue > size) {
-                throw new IndexOutOfBoundsException("" + positionalValue);
+                throw new IndexOutOfBoundsException("Index: " + positionalValue + ", Size: " + size);
             }
 
             index = positionalValue;
@@ -539,17 +540,16 @@ public class StoutList<E extends Comparable<? super E>> extends AbstractSequenti
 
         @Override
         public E next() {
-            if (!hasNext()) {
-                throw new NoSuchElementException();
-            }
+            if (!hasNext()) { throw new NoSuchElementException(); }
+            if(index > size) { throw new RuntimeException("Index is greater than size"); }
 
             pending = cursor;
             // increase index and find next node if needed
             Node node = findByIndex(index).node;
             int offset = findByIndex(index).offset;
-            if (node != cursor) {
-                cursor = cursor.next;
-            }
+
+            if (node != cursor) { cursor = cursor.next; }
+
             direction = AHEAD;
             index++;
             // if the cursor is not the tail or head, return the item at the offset

@@ -1,40 +1,35 @@
+import edu.iastate.cs228.hw3.StoutList;
 import org.junit.Assert;
 import org.junit.Test;
-import java.util.Random;
-import edu.iastate.cs228.hw3.StoutList;
 
-import static org.junit.Assert.assertEquals;
+import java.util.Random;
+
 import static org.junit.Assert.fail;
-public class TestAdd {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class StoutList_Add {
     @Test
-    public void trivialTest() {
+    public void trivial_test() {
         Assert.assertTrue(true);
     }
 
     @Test
-    public void testStoutListConstruction0() {
-        StoutList<Integer> sl = new StoutList<Integer>();
-        // ensure that get() works on an empty list
-        assertEquals(0, sl.size());
-    }
-
-    @Test
     public void testStoutListConstruction0ZeroSize() {
-        StoutList<Integer> sl = new StoutList<Integer>();
+        StoutList<Integer> sl = new StoutList<>();
         assertEquals(0, sl.size());
     }
 
 
     @Test
     public void testStoutListConstruction1AddOne() {
-        StoutList<Integer> sl = new StoutList<Integer>();
+        StoutList<Integer> sl = new StoutList<>();
         sl.add(1);
         assertEquals(1, sl.size());
     }
 
     @Test
     public void testStoutListConstruction2AddTwo() {
-        StoutList<Integer> sl = new StoutList<Integer>();
+        StoutList<Integer> sl = new StoutList<>();
         sl.add(1);
         sl.add(2);
         assertEquals(2, sl.size());
@@ -43,7 +38,7 @@ public class TestAdd {
 
     @Test
     public void testStoutListConstruction3AddThree() {
-        StoutList<Integer> sl = new StoutList<Integer>();
+        StoutList<Integer> sl = new StoutList<>();
         sl.add(1);
         sl.add(2);
         sl.add(3);
@@ -54,7 +49,7 @@ public class TestAdd {
 
     @Test
     public void testStoutListConstruction4AddFour() {
-        StoutList<Integer> sl = new StoutList<Integer>();
+        StoutList<Integer> sl = new StoutList<>();
         sl.add(1);
         sl.add(2);
         sl.add(3);
@@ -68,7 +63,7 @@ public class TestAdd {
 
     @Test
     public void testStoutListConstruction5AddFive() {
-        StoutList<Integer> sl = new StoutList<Integer>();
+        StoutList<Integer> sl = new StoutList<>();
         sl.add(1);
         sl.add(2);
         sl.add(3);
@@ -79,7 +74,7 @@ public class TestAdd {
 
     @Test
     public void testStoutListConstruction6AddSix() {
-        StoutList<Integer> sl = new StoutList<Integer>();
+        StoutList<Integer> sl = new StoutList<>();
         sl.add(1);
         sl.add(2);
         sl.add(3);
@@ -91,7 +86,7 @@ public class TestAdd {
 
     @Test
     public void testStoutListConstruction7AddSeven() {
-        StoutList<Integer> sl = new StoutList<Integer>();
+        StoutList<Integer> sl = new StoutList<>();
         sl.add(1);
         sl.add(2);
         sl.add(3);
@@ -104,7 +99,7 @@ public class TestAdd {
 
     @Test
     public void testStoutListConstruction8AddEight() {
-        StoutList<Integer> sl = new StoutList<Integer>();
+        StoutList<Integer> sl = new StoutList<>();
         sl.add(1);
         sl.add(2);
         sl.add(3);
@@ -122,7 +117,7 @@ public class TestAdd {
 
     @Test
     public void testStoutListConstruction9AddNine() {
-        StoutList<Integer> sl = new StoutList<Integer>();
+        StoutList<Integer> sl = new StoutList<>();
         sl.add(1);
         sl.add(2);
         sl.add(3);
@@ -137,7 +132,7 @@ public class TestAdd {
 
     @Test
     public void testStoutListConstruction10AddTen() {
-        StoutList<Integer> sl = new StoutList<Integer>();
+        StoutList<Integer> sl = new StoutList<>();
         sl.add(1);
         sl.add(2);
         sl.add(3);
@@ -153,7 +148,7 @@ public class TestAdd {
 
     @Test
     public void testStoutListConstruction11AddEleven() {
-        StoutList<Integer> sl = new StoutList<Integer>();
+        StoutList<Integer> sl = new StoutList<>();
         sl.add(1);
         sl.add(2);
         sl.add(3);
@@ -170,7 +165,7 @@ public class TestAdd {
 
     @Test
     public void testStoutListConstruction12AddTwelve() {
-        StoutList<Integer> sl = new StoutList<Integer>();
+        StoutList<Integer> sl = new StoutList<>();
         sl.add(1);
         sl.add(2);
         sl.add(3);
@@ -188,7 +183,7 @@ public class TestAdd {
 
     @Test
     public void testStoutListConstruction13AddThirteen() {
-        StoutList<Integer> sl = new StoutList<Integer>();
+        StoutList<Integer> sl = new StoutList<>();
         sl.add(1);
         sl.add(2);
         sl.add(3);
@@ -207,7 +202,7 @@ public class TestAdd {
 
     @Test
     public void testStoutListConstruction14AddFourteen() {
-        StoutList<Integer> sl = new StoutList<Integer>();
+        StoutList<Integer> sl = new StoutList<>();
         sl.add(1);
         sl.add(2);
         sl.add(3);
@@ -227,7 +222,7 @@ public class TestAdd {
 
     @Test
     public void testStoutListConstruction15AddFifteen() {
-        StoutList<Integer> sl = new StoutList<Integer>();
+        StoutList<Integer> sl = new StoutList<>();
         sl.add(1);
         sl.add(2);
         sl.add(3);
@@ -248,7 +243,7 @@ public class TestAdd {
 
     @Test
     public void testStoutListConstruction16AddSixteen() {
-        StoutList<Integer> sl = new StoutList<Integer>();
+        StoutList<Integer> sl = new StoutList<>();
         sl.add(1);
         sl.add(2);
         sl.add(3);
@@ -270,7 +265,7 @@ public class TestAdd {
 
     @Test
     public void testStoutListConstruction17AddSeventeen() {
-        StoutList<Integer> sl = new StoutList<Integer>();
+        StoutList<Integer> sl = new StoutList<>();
         sl.add(1);
         sl.add(2);
         sl.add(3);
@@ -293,7 +288,7 @@ public class TestAdd {
 
     @Test
     public void testStoutListConstruction18AddEighteen() {
-        StoutList<Integer> sl = new StoutList<Integer>();
+        StoutList<Integer> sl = new StoutList<>();
         sl.add(1);
         sl.add(2);
         sl.add(3);
@@ -317,7 +312,7 @@ public class TestAdd {
 
     @Test
     public void testStoutListConstruction19AddNineteen() {
-        StoutList<Integer> sl = new StoutList<Integer>();
+        StoutList<Integer> sl = new StoutList<>();
         sl.add(1);
         sl.add(2);
         sl.add(3);
@@ -342,7 +337,7 @@ public class TestAdd {
 
     @Test
     public void testStoutListConstruction20AddTwenty() {
-        StoutList<Integer> sl = new StoutList<Integer>();
+        StoutList<Integer> sl = new StoutList<>();
         sl.add(1);
         sl.add(2);
         sl.add(3);
@@ -368,7 +363,7 @@ public class TestAdd {
 
     @Test
     public void testStoutListConstruction21AddTwentyOne() {
-        StoutList<Integer> sl = new StoutList<Integer>();
+        StoutList<Integer> sl = new StoutList<>();
         sl.add(1);
         sl.add(2);
         sl.add(3);
@@ -395,7 +390,7 @@ public class TestAdd {
 
     @Test
     public void testStoutListConstruction22AddTwentyTwo() {
-        StoutList<Integer> sl = new StoutList<Integer>();
+        StoutList<Integer> sl = new StoutList<>();
         sl.add(1);
         sl.add(2);
         sl.add(3);
@@ -423,7 +418,7 @@ public class TestAdd {
 
     @Test
     public void testStoutListConstruction23AddTwentyThree() {
-        StoutList<Integer> sl = new StoutList<Integer>();
+        StoutList<Integer> sl = new StoutList<>();
         sl.add(1);
         sl.add(2);
         sl.add(3);
@@ -452,7 +447,7 @@ public class TestAdd {
 
     @Test
     public void testStoutListConstruction24AddTwentyFour() {
-        StoutList<Integer> sl = new StoutList<Integer>();
+        StoutList<Integer> sl = new StoutList<>();
         sl.add(1);
         sl.add(2);
         sl.add(3);
@@ -482,7 +477,7 @@ public class TestAdd {
 
     @Test
     public void testStoutListConstruction25AddTwentyFive() {
-        StoutList<Integer> sl = new StoutList<Integer>();
+        StoutList<Integer> sl = new StoutList<>();
         sl.add(1);
         sl.add(2);
         sl.add(3);
@@ -513,7 +508,7 @@ public class TestAdd {
 
     @Test
     public void testStoutListConstruction26AddTwentySix() {
-        StoutList<Integer> sl = new StoutList<Integer>();
+        StoutList<Integer> sl = new StoutList<>();
         sl.add(1);
         sl.add(2);
         sl.add(3);
@@ -545,7 +540,7 @@ public class TestAdd {
 
     @Test
     public void testStoutListConstruction27AddTwentySeven() {
-        StoutList<Integer> sl = new StoutList<Integer>();
+        StoutList<Integer> sl = new StoutList<>();
         sl.add(1);
         sl.add(2);
         sl.add(3);
@@ -579,7 +574,7 @@ public class TestAdd {
     @Test
     public void testStoutListConstruction28AddTwentyEight() {
         StoutList sl = new StoutList(4);
-        for(int i = 1; i < 28; i++)
+        for(int i = 1; i <= 28; i++)
             if(!sl.add(i)){
                 fail("Failed to add " + i);
             }
