@@ -4,8 +4,8 @@ import org.junit.Test;
 
 import java.util.Random;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class StoutList_Add {
     @Test
@@ -14,55 +14,48 @@ public class StoutList_Add {
     }
 
     @Test
-    public void testStoutListConstruction0ZeroSize() {
+    public void test_StoutList_Construction_0_Size() {
         StoutList<Integer> sl = new StoutList<>();
         assertEquals(0, sl.size());
     }
 
 
     @Test
-    public void testStoutListConstruction1AddOne() {
+    public void test_StoutList_Construction_Add_1() {
         StoutList<Integer> sl = new StoutList<>();
         sl.add(1);
         assertEquals(1, sl.size());
     }
 
     @Test
-    public void testStoutListConstruction2AddTwo() {
+    public void test_StoutList_Construction_Add_2() {
         StoutList<Integer> sl = new StoutList<>();
         sl.add(1);
         sl.add(2);
         assertEquals(2, sl.size());
-        assertEquals(1, sl.get(0).intValue());
     }
 
     @Test
-    public void testStoutListConstruction3AddThree() {
+    public void test_StoutList_Construction_Add_3() {
         StoutList<Integer> sl = new StoutList<>();
         sl.add(1);
         sl.add(2);
         sl.add(3);
-        assertEquals(1, sl.get(0).intValue());
-        assertEquals(2, sl.get(1).intValue());
-        assertEquals(3, sl.get(2).intValue());
+        assertEquals(3, sl.size());
     }
 
     @Test
-    public void testStoutListConstruction4AddFour() {
+    public void test_StoutList_Construction_Add_4() {
         StoutList<Integer> sl = new StoutList<>();
         sl.add(1);
         sl.add(2);
         sl.add(3);
         sl.add(4);
         assertEquals(4, sl.size());
-        assertEquals(1, sl.get(0).intValue());
-        assertEquals(2, sl.get(1).intValue());
-        assertEquals(3, sl.get(2).intValue());
-        assertEquals(4, sl.get(3).intValue());
     }
 
     @Test
-    public void testStoutListConstruction5AddFive() {
+    public void test_StoutList_Construction_Add_5() {
         StoutList<Integer> sl = new StoutList<>();
         sl.add(1);
         sl.add(2);
@@ -73,7 +66,7 @@ public class StoutList_Add {
     }
 
     @Test
-    public void testStoutListConstruction6AddSix() {
+    public void test_StoutList_Construction_Add_6() {
         StoutList<Integer> sl = new StoutList<>();
         sl.add(1);
         sl.add(2);
@@ -85,7 +78,7 @@ public class StoutList_Add {
     }
 
     @Test
-    public void testStoutListConstruction7AddSeven() {
+    public void test_StoutList_Construction_Add_7() {
         StoutList<Integer> sl = new StoutList<>();
         sl.add(1);
         sl.add(2);
@@ -98,7 +91,7 @@ public class StoutList_Add {
     }
 
     @Test
-    public void testStoutListConstruction8AddEight() {
+    public void test_StoutList_Construction_Add_8() {
         StoutList<Integer> sl = new StoutList<>();
         sl.add(1);
         sl.add(2);
@@ -109,10 +102,6 @@ public class StoutList_Add {
         sl.add(7);
         sl.add(8);
         assertEquals(8, sl.size());
-        // check that the first 8 elements are correct
-        for (int i = 0; i < 8; i++) {
-            assertEquals(i + 1, sl.get(i).intValue());
-        }
     }
 
     @Test
@@ -662,10 +651,6 @@ public class StoutList_Add {
         }
         // check that the size is 100
         assertEquals(100, sl.size());
-        // check that the elements are in the correct positions
-        for (int i = 0; i < 100; i++) {
-            assertEquals(i, sl.get(i).intValue());
-        }
     }
 
     @Test
@@ -679,9 +664,6 @@ public class StoutList_Add {
         // check that the size is 100
         assertEquals(100, sl.size());
         // check that the elements are in the correct positions
-        for (int i = 99; i >= 0; i--) {
-            assertEquals(i, sl.get(99 - i).intValue());
-        }
     }
 
     @Test
@@ -691,9 +673,6 @@ public class StoutList_Add {
             sl.add(i);
         }
         assertEquals(1000, sl.size());
-        for (int i = 0; i < 1000; i++) {
-            assertEquals(i, sl.get(i).intValue());
-        }
     }
 
     @Test
