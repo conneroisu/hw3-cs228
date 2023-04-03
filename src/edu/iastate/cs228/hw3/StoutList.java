@@ -3,8 +3,9 @@ package edu.iastate.cs228.hw3;
 import java.util.*;
 
 /**
- * @author Conner Ohnesorge 
- * {@summary} This class implements a doubly linked list with placeholder head and tail nodes with nodes in between the head and the tail each containing a data array of length node size.
+ * @author Conner Ohnesorge
+ * @description This class implements a doubly linked list with placeholder head and tail nodes
+ * with nodes in between the head and the tail each containing a data array of length node size.
  */
 public class StoutList<E extends Comparable<? super E>> extends
         AbstractSequentialList<E> {
@@ -18,7 +19,7 @@ public class StoutList<E extends Comparable<? super E>> extends
      */
     private final int nodeSize;
     /**
-     * Placeholder node for tail of this StoutList.
+     * Placeholder node for the tail of this StoutList.
      */
     private final Node tail;
     /**
@@ -41,7 +42,7 @@ public class StoutList<E extends Comparable<? super E>> extends
     /**
      * Constructs an empty StoutList with the given node size.
      *
-     * @param nodeSize number of elements that may be stored in each node, must be an even number
+     * @param nodeSize the number of elements that may be stored in each node must be an even number
      */
     public StoutList(int nodeSize) {
         if (nodeSize <= 0 || nodeSize % 2 != 0) {
@@ -173,8 +174,8 @@ public class StoutList<E extends Comparable<? super E>> extends
     }
 
     /**
-     * Sort all elements in the Stout list in the NON-INCREASING order. Calls the bubbleSort() method. After sorting, all
-     * but (possibly) the last nodes must be filled with elements.
+     * Sort all elements in the Stout list in the NON-INCREASING order. Calls the bubbleSort() method. After sorting,
+     * all but (possibly) the last nodes must be filled with elements.
      * <p>
      * Comparable<? Super E> must be implemented for calling bubbleSort().
      * </p>
@@ -197,9 +198,11 @@ public class StoutList<E extends Comparable<? super E>> extends
     }
 
     /**
-     * Returns an iterator over the elements in this list (in proper sequence) at the beginning of the StoutList.
+     * Returns an iterator over the elements in this StoutList (in the proper sequence) at the beginning of the
+     * StoutList.
      *
-     * @return an iterator over the elements in this list (in proper sequence) at the beginning of the StoutList.
+     * @return an iterator over the elements in this StoutList (in the proper sequence) at the beginning of the
+     * StoutList.
      */
     @Override
     public Iterator<E> iterator() {
@@ -207,9 +210,10 @@ public class StoutList<E extends Comparable<? super E>> extends
     }
 
     /**
-     * Returns a list iterator over the elements in this list (in proper sequence).
+     * Returns a list iterator over the elements in this StoutList (in the proper sequence).
      *
-     * @return a list iterator over the elements in this list (in proper sequence) at the beginning of the StoutList.
+     * @return a list iterator over the elements in this StoutList (in the proper sequence) at the beginning of the
+     * StoutList.
      */
     @Override
     public ListIterator<E> listIterator() {
@@ -217,10 +221,11 @@ public class StoutList<E extends Comparable<? super E>> extends
     }
 
     /**
-     * Returns a list iterator over the elements in this list (in proper sequence) at the specified index of the StoutList.
+     * Returns a list iterator over the elements in this StoutList(in the proper sequence) at the specified index of the
+     * StoutList.
      *
      * @param index index of the first element to be returned from the list iterator (by a call to next)
-     * @return a list iterator over the elements in this list (in proper sequence)
+     * @return a list iterator over the elements in this list (in the proper sequence)
      * @throws IndexOutOfBoundsException if the index is out of range (index < 0 || index > size)
      */
     @Override
@@ -248,7 +253,7 @@ public class StoutList<E extends Comparable<? super E>> extends
     public String toStringInternal(ListIterator<E> iterator) {
         int count = 0;
         int position = -1;
-	// if iterator is not null, get the index of the iterator
+        // if the iterator is not null, get the index of the iterator
         if (iterator != null) {
             position = iterator.nextIndex();
         }
@@ -276,7 +281,7 @@ public class StoutList<E extends Comparable<? super E>> extends
                     sb.append(data.toString());
                     ++count;
 
-                    // iterator at end
+                    // iterator at an end
                     if (position == size && count == size) {
                         sb.append(" |");
                         position = -1;
@@ -485,7 +490,7 @@ public class StoutList<E extends Comparable<? super E>> extends
     }
 
     /**
-     * Sort arr[] using the bubble sort algorithm in the NON-INCREASING order. For a description of bubble sort please
+     * Sort arr[] using the bubble sort algorithm in the NON-INCREASING order. For a description of bubble sort, please
      * refer to Section 6.1 in the project description. You must use the compareTo() method from an implementation of
      * the Comparable interface by the class E or ? super E.
      *
@@ -573,6 +578,7 @@ public class StoutList<E extends Comparable<? super E>> extends
          * <p>
          * Precondition: count < nodeSize
          * </p>
+         *
          * @param offset array index at which to put the new element
          * @param item   element to be added
          */
@@ -592,7 +598,7 @@ public class StoutList<E extends Comparable<? super E>> extends
          * Deletes an element from this node at the indicated offset, shifting elements left as necessary. Precondition:
          * 0 <= offset < count
          *
-         * @param offset array index of element in the data array of this node to be removed.
+         * @param offset array index of an element in the data array of this node to be removed.
          */
         void removeItem(int offset) {
             for (int i = offset + 1; i < nodeSize; ++i) {
@@ -605,8 +611,8 @@ public class StoutList<E extends Comparable<? super E>> extends
     }
 
     /**
-     * Inner class for the StoutList that establishes a node information object. It contains a node, an offset,
-     * and a boolean value that indicates whether the element exists in the node.
+     * Inner class for the StoutList that establishes a node information object. It contains a node, an offset, and a
+     * boolean value that indicates whether the element exists in the node.
      */
     private class NodeInfo {
 
