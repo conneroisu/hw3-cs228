@@ -15,8 +15,10 @@ public class StoutList_Contains {
         list.add(2);
         list.add(1);
         list.add(9);
-        if ((list.contains(4))) {
+        if (list.contains(3)) {
             Assert.assertEquals(true, list.contains(4));
+        } else {
+            Assert.fail();
         }
     }
 
@@ -74,12 +76,12 @@ public class StoutList_Contains {
         list.add(1);
         list.add(9);
         if(list.contains(1)){
-            Assert.assertEquals(true, list.contains(1));
+            Assert.assertTrue(list.contains(1));
         }else{
             Assert.fail();
         }
         if(list.contains(2)){
-            Assert.assertEquals(true, list.contains(2));
+            Assert.assertTrue(list.contains(2));
         }else{
             Assert.fail();
         }

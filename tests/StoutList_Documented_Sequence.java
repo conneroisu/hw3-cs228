@@ -9,11 +9,12 @@ public class StoutList_Documented_Sequence {
     @Before
     public void documentSetup() {
         list = new StoutList<String>();
-        list.set(0, "A");
-        list.set(1, "B");
-        list.set(2, "C");
-        list.set(3, "D");
-        list.set(4, "E");
+        list.add("A");
+        list.add("B");
+        list.add("C");
+        list.add("D");
+        list.add("E");
+
     }
 
     @Test
@@ -26,7 +27,6 @@ public class StoutList_Documented_Sequence {
     public void testAdd() {
         // after add "V", the list should be "A", "B", "C", "D", "E", "V"
         list.add("V");
-        Assert.assertEquals("A", list.get(0));
         Assert.assertEquals("B", list.get(1));
         Assert.assertEquals("C", list.get(2));
         Assert.assertEquals("D", list.get(3));

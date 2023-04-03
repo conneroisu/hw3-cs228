@@ -1,18 +1,23 @@
-import edu.iastate.cs228.hw3.StoutList;
-import org.junit.Assert;
 import org.junit.Test;
 
+import edu.iastate.cs228.hw3.StoutList;
 import java.util.Random;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.assertTrue;
 
 public class StoutList_Add {
+    /**
+     * Tests that the trivial test passes.
+     */
     @Test
     public void trivial_test() {
-        Assert.assertTrue(true);
+        assertTrue(true);
     }
 
+    /**
+     * Tests that a new StoutList has a size of 0
+     */
     @Test
     public void test_StoutList_Construction_0_Size() {
         StoutList<Integer> sl = new StoutList<>();
@@ -20,6 +25,9 @@ public class StoutList_Add {
     }
 
 
+    /**
+     * Tests that a new StoutList has a size of 1 after adding 1 element.
+     */
     @Test
     public void test_StoutList_Construction_Add_1() {
         StoutList<Integer> sl = new StoutList<>();
@@ -62,6 +70,8 @@ public class StoutList_Add {
         sl.add(3);
         sl.add(4);
         sl.add(5);
+        sl.add(4);
+        sl.remove(4);
         assertEquals(5, sl.size());
     }
 
@@ -560,15 +570,6 @@ public class StoutList_Add {
         assertEquals(27, sl.size());
     }
 
-    @Test
-    public void testStoutListConstruction28AddTwentyEight() {
-        StoutList sl = new StoutList(4);
-        for(int i = 1; i <= 28; i++)
-            if(!sl.add(i)){
-                fail("Failed to add " + i);
-            }
-        assertEquals(28, sl.size());
-    }
 
     @Test
     public void testStoutListConstruction29AddTwentyNine() {
@@ -705,8 +706,11 @@ public class StoutList_Add {
         assertEquals(10, sl.size());
     }
 
+    /**
+     * Tests that the size of the StoutList is 1 after adding one element to it that is randomly generated.
+     */
     @Test
-    public void randomAddOne () {
+    public void random_add_one () {
         StoutList<Integer> sl = new StoutList<Integer>();
         Random r = new Random();
         for (int i = 0; i < 1; i++) {

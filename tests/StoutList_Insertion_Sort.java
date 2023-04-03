@@ -1,6 +1,6 @@
 import org.junit.Test;
-import edu.iastate.cs228.hw3.StoutList;
 
+import edu.iastate.cs228.hw3.StoutList;
 import static org.junit.Assert.assertEquals;
 
 public class StoutList_Insertion_Sort {
