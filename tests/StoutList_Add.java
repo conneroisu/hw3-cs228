@@ -3,8 +3,7 @@ import org.junit.Test;
 import edu.iastate.cs228.hw3.StoutList;
 import java.util.Random;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class StoutList_Add {
     /**
@@ -717,5 +716,290 @@ public class StoutList_Add {
             sl.add(r.nextInt());
         }
         assertEquals(1, sl.size());
+    }
+
+    @Test
+    public void testStoutListConstruction1AddOne() {
+        StoutList<Integer> sl = new StoutList<Integer>();
+        sl.add(1);
+        assertEquals(1, sl.size());
+        if(sl.contains(1)) {
+            System.out.println("The list contains 1");
+        }
+        else {
+            System.out.println("The list does not contain 1");
+        }
+    }
+
+    @Test
+    public void testStoutListConstruction2AddTwo() {
+        StoutList<Integer> sl = new StoutList<Integer>();
+        sl.add(1);
+        sl.add(2);
+        assertEquals(2, sl.size());
+        if(sl.contains(1)) {
+            System.out.println("The list contains 1");
+        }
+        else {
+            System.out.println("The list does not contain 1");
+        }
+        if(sl.contains(2)) {
+            System.out.println("The list contains 2");
+        }
+        else {
+            System.out.println("The list does not contain 2");
+        }
+    }
+
+    @Test
+    public void testStoutListConstruction3AddThree() {
+        StoutList<Integer> sl = new StoutList<Integer>();
+        sl.add(1);
+        sl.add(2);
+        sl.add(3);
+        assertEquals(3, sl.size());
+        if(sl.contains(1)) {
+            System.out.println("The list contains 1");
+        }
+        else {
+            System.out.println("The list does not contain 1");
+        }
+        if(sl.contains(2)) {
+            System.out.println("The list contains 2");
+        }
+        else {
+            System.out.println("The list does not contain 2");
+        }
+        if(sl.contains(3)) {
+            System.out.println("The list contains 3");
+        }
+        else {
+            System.out.println("The list does not contain 3");
+        }
+    }
+
+    @Test
+    public void testStoutListConstruction4AddFour() {
+        StoutList<Integer> sl = new StoutList<Integer>();
+        sl.add(1);
+        sl.add(2);
+        sl.add(3);
+        sl.add(4);
+        assertEquals(4, sl.size());
+        if(sl.contains(1)) {
+            System.out.println("The list contains 1");
+        }
+        else {
+            System.out.println("The list does not contain 1");
+        }
+        if(sl.contains(2)) {
+            System.out.println("The list contains 2");
+        }
+        else {
+            System.out.println("The list does not contain 2");
+        }
+        if(sl.contains(3)) {
+            System.out.println("The list contains 3");
+        }
+        else {
+            System.out.println("The list does not contain 3");
+        }
+        if(sl.contains(4)) {
+            System.out.println("The list contains 4");
+        }
+        else {
+            System.out.println("The list does not contain 4");
+        }
+        if(sl.get(0) == 1) {
+            System.out.println("The first element is 1");
+        }
+        else {
+            System.out.println("The first element is not 1");
+        }
+
+        if(sl.get(1) == 2) {
+            System.out.println("The second element is 2");
+        }
+        else {
+            System.out.println("The second element is not 2");
+        }
+
+        if(sl.get(2) == 3) {
+            System.out.println("The third element is 3");
+        }
+        else {
+            System.out.println("The third element is not 3");
+        }
+
+        if(sl.get(3) == 4) {
+            System.out.println("The fourth element is 4");
+        }
+        else {
+            System.out.println("The fourth element is not 4");
+        }
+    }
+
+    @Test
+    public void testStoutListConstruction5AddFive() {
+        StoutList<Integer> sl = new StoutList<Integer>();
+        sl.add(1);
+        sl.add(2);
+        sl.add(3);
+        sl.add(4);
+        sl.add(5);
+        assertEquals(5, sl.size());
+        if(sl.contains(1)) {
+            System.out.println("The list contains 1");
+        }
+        else {
+            System.out.println("The list does not contain 1");
+        }
+        if(sl.contains(2)) {
+            System.out.println("The list contains 2");
+        }
+        else {
+            System.out.println("The list does not contain 2");
+        }
+        if(sl.contains(3)) {
+            System.out.println("The list contains 3");
+        }
+        else {
+            System.out.println("The list does not contain 3");
+        }
+        if(sl.contains(4)) {
+            System.out.println("The list contains 4");
+        }
+        else {
+            System.out.println("The list does not contain 4");
+        }
+        if(sl.contains(5)) {
+            System.out.println("The list contains 5");
+        }
+        else {
+            System.out.println("The list does not contain 5");
+        }
+        if(sl.get(0) == 1) {
+            System.out.println("The first element is 1");
+        }
+        else {
+            System.out.println("The first element is not 1");
+        }
+
+        if(sl.get(1) == 2) {
+            System.out.println("The second element is 2");
+        }
+        else {
+            System.out.println("The second element is not 2");
+        }
+
+        if(sl.get(2) == 3) {
+            System.out.println("The third element is 3");
+        }
+        else {
+            System.out.println("The third element is not 3");
+        }
+
+        if(sl.get(3) == 4) {
+            System.out.println("The fourth element is 4");
+        }
+        else {
+            System.out.println("The fourth element is not 4");
+        }
+
+        if(sl.get(4) == 5) {
+            System.out.println("The fifth element is 5");
+        }
+        else {
+            System.out.println("The fifth element is not 5");
+        }
+    }
+
+    @Test
+    public void testStoutListConstruction6AddSix() {
+        StoutList<Integer> sl = new StoutList<Integer>();
+        sl.add(1);
+        sl.add(2);
+        sl.add(3);
+        sl.add(4);
+        sl.add(5);
+        sl.add(6);
+        assertEquals(6, sl.size());
+        if (sl.contains(1)) {
+            System.out.println("The list contains 1");
+        }
+        else {
+            System.out.println("The list does not contain 1");
+            fail();
+        }
+        if (sl.contains(2)) {
+            System.out.println("The list contains 2");
+        }
+        else {
+            System.out.println("The list does not contain 2");
+            fail();
+        }
+        if (sl.contains(3)) {
+            System.out.println("The list contains 3");
+        }
+        else {
+            System.out.println("The list does not contain 3");
+            fail();
+        }
+        if (sl.contains(4)) {
+            System.out.println("The list contains 4");
+        }
+        else {
+            System.out.println("The list does not contain 4");
+            fail();
+        }
+        if (sl.contains(5)) {
+            System.out.println("The list contains 5");
+        }
+        else {
+            System.out.println("The list does not contain 5");
+            fail();
+        }
+        if (sl.contains(6)) {
+            System.out.println("The list contains 6");
+        }
+        else {
+            System.out.println("The list does not contain 6");
+            fail();
+        }
+        if (sl.get(0) == 1) {
+            System.out.println("The first element is 1");
+        }
+        else {
+            System.out.println("The first element is not 1");
+            fail();
+        }
+
+        if (sl.get(1) == 2) {
+            System.out.println("The second element is 2");
+        }
+        else {
+            System.out.println("The second element is not 2");
+            fail();
+        }
+
+        if (sl.get(2) == 3) {
+            System.out.println("The third element is 3");
+        }
+        else {
+            System.out.println("The third element is not 3");
+            fail();
+        }
+
+        if (sl.get(3) == 4) {
+            System.out.println("The fourth element is 4");
+        }
+        else {
+            System.out.println("The fourth element is not 4");
+            fail();
+        }
+
+        if (sl.get(4) == 5) {
+            System.out.println("The fifth element is 5");
+        }
     }
 }
