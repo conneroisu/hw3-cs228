@@ -4,11 +4,10 @@ import java.util.*;
 
 /**
  * @author Conner Ohnesorge
- * @description This class implements a doubly linked list with placeholder head and tail nodes
- * with nodes in between the head and the tail each containing a data array of length node size.
+ * @description This class implements a doubly linked list with placeholder head and tail nodes with nodes in between
+ * the head and the tail, each containing a data array of length node size.
  */
-public class StoutList<E extends Comparable<? super E>> extends
-        AbstractSequentialList<E> {
+public class StoutList<E extends Comparable<? super E>> extends AbstractSequentialList<E> {
     /**
      * Default number of elements that may be stored in each node of a StoutList.
      */
@@ -278,7 +277,7 @@ public class StoutList<E extends Comparable<? super E>> extends
                         sb.append("| ");
                         position = -1;
                     }
-                    sb.append(data.toString());
+                    sb.append(data);
                     ++count;
 
                     // iterator at an end
@@ -340,7 +339,7 @@ public class StoutList<E extends Comparable<? super E>> extends
             throw new NullPointerException();
         }
 
-        NodeInfo NodeInfo = null;
+        NodeInfo NodeInfo;
 
         // if the list is empty, create a new node and add the item to it
         if (size == 0) {
@@ -692,22 +691,19 @@ public class StoutList<E extends Comparable<? super E>> extends
         }
 
         /**
-         * Returns the next element in the list and increments the index.
+         * Returns the next element in the StoutList and increments the index.
          *
-         * @return the next element in the list.
-         * @throws NoSuchElementException if there is no next element.
+         * @return the next element in the StoutList.
+         * @throws NoSuchElementException if there is no next element in the StoutList.
          */
         @Override
         public E next() throws NoSuchElementException {
             if (hasNext()) {
                 NodeInfo n = find(index++);
-
                 lastAction = n;
                 removable = true;
-
                 return (n.node.data[n.offset]);
             }
-
             throw new NoSuchElementException();
         }
 
@@ -743,7 +739,7 @@ public class StoutList<E extends Comparable<? super E>> extends
         }
 
         /**
-         * Returns the previous element in the StoutList Iterator.
+         * Returns the previous element in the StoutList List using the previous index.
          *
          * @return the previous element in the StoutList Iterator.
          * @throws NoSuchElementException if there is no previous element.
@@ -756,7 +752,6 @@ public class StoutList<E extends Comparable<? super E>> extends
                 removable = true;
                 return n.node.data[n.offset];
             }
-
             throw new NoSuchElementException();
         }
 
